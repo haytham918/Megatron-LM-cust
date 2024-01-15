@@ -4,10 +4,10 @@
 
 export CUDA_DEVICE_MAX_CONNECTIONS=1
 
-CHECKPOINT_PATH=<Specify path>
-VOCAB_FILE=<Specify path to file>/gpt2-vocab.json
-MERGE_FILE=<Specify path to file>/gpt2-merges.txt
-DATA_PATH=<Specify path and file prefix>_text_document
+CHECKPOINT_PATH=./checkpoints
+VOCAB_FILE=./gpt2-vocab.json
+MERGE_FILE=./gpt2-merges.txt
+DATA_PATH=./wikitext_text_document
 
 GPT_ARGS="
     --num-layers 24 \
@@ -18,7 +18,7 @@ GPT_ARGS="
     --micro-batch-size 4 \
     --global-batch-size 8 \
     --lr 0.00015 \
-    --train-iters 500000 \
+    --train-iters 1000 \
     --lr-decay-iters 320000 \
     --lr-decay-style cosine \
     --min-lr 1.0e-5 \
